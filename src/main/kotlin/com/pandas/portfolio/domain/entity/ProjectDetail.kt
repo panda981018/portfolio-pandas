@@ -1,13 +1,18 @@
 package com.pandas.portfolio.domain.entity
 
-import jakarta.persistence.*
+import jakarta.persistence.Column
+import jakarta.persistence.Entity
+import jakarta.persistence.GeneratedValue
+import jakarta.persistence.GenerationType
+import jakarta.persistence.Id
+import org.hibernate.annotations.Columns
 
 @Entity
-class ProjectDetail : BaseEntity() {
+class ProjectDetail: BaseEntity() {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "project_detail_id")
-    var id: Long? = null // ? : nullable
+    var id: Long? = null
 
 }

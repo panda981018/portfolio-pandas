@@ -1,6 +1,8 @@
 package com.pandas.portfolio.domain.repository
 
-import com.pandas.portfolio.domain.entity.Link
+import com.pandas.portfolio.domain.entity.Project
 import org.springframework.data.jpa.repository.JpaRepository
 
-interface ProjectRepository : JpaRepository<Link, Long>
+interface ProjectRepository: JpaRepository<Project, Long> {
+    
+}
