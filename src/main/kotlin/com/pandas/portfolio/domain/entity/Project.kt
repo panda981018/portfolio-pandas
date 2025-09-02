@@ -4,13 +4,13 @@ import jakarta.persistence.*
 
 @Entity
 class Project(
-    name: String,
-    description: String,
-    startYear: Int,
-    startMonth: Int,
-    endYear: Int?,
-    endMonth: Int?,
-    isActive: Boolean
+        name: String,
+        description: String,
+        startYear: Int,
+        startMonth: Int,
+        endYear: Int?,
+        endMonth: Int?,
+        isActive: Boolean
 ) : BaseEntity() {
 
     @Id
@@ -33,14 +33,14 @@ class Project(
     var isActive: Boolean = isActive
 
     @OneToMany(
-        targetEntity = ProjectDetail::class,
-        fetch = FetchType.LAZY,
-        cascade = [CascadeType.ALL]
+            targetEntity = ProjectDetail::class,
+            fetch = FetchType.LAZY,
+            cascade = [CascadeType.PERSIST]
     )
     @JoinColumn(name = "project_id")
     var details: MutableList<ProjectDetail> = mutableListOf() // make empty list
 
-    @OneToMany(mappedBy = "project")
+    @OneToMany(mappedBy = "project", fetch = FetchType.LAZY, cascade = [CascadeType.PERSIST])
     var skills: MutableList<ProjectSkill> = mutableListOf()
 
     fun getEndYearMonth(): String {
@@ -52,13 +52,13 @@ class Project(
     }
 
     fun update(
-        name: String,
-        description: String,
-        startYear: Int,
-        startMonth: Int,
-        endYear: Int?,
-        endMonth: Int?,
-        isActive: Boolean
+            name: String,
+            description: String,
+            startYear: Int,
+            startMonth: Int,
+            endYear: Int?,
+            endMonth: Int?,
+            isActive: Boolean
     ) {
         this.name = name
         this.description = description
