@@ -58,7 +58,6 @@ class ProjectRepositoryTest(
         for (i in 1..DATA_SIZE) {
             val skillTypes = SkillType.values()
             val skill = Skill(name = "테스트 ${i}", type = skillTypes[i % skillTypes.size].name, isActive = true)
-            println("jiwon:skill ${i}번째 = ${skill.type}")
             skills.add(skill)
         }
         skillRepository.saveAll(skills)
@@ -84,7 +83,6 @@ class ProjectRepositoryTest(
 
         for (project in projects) {
             assertThat(project.details).hasSize(project.name.toInt())
-            println("jiwon:project = $project")
             println("project.details.size: ${project.details.size}")
 
             assertThat(project.skills).hasSize(project.name.toInt())
