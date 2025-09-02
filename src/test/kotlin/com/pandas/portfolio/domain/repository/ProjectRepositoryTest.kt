@@ -105,7 +105,7 @@ class ProjectRepositoryTest(
             println("project.details.size: ${project.details.size}")
 
             assertThat(project.skills).hasSize(project.name.toInt())
-            println("project.details.size: ${project.skills.size}")
+            println("project.skills.size: ${project.skills.size}")
         }
 
         println("----- findAllByIsActive 테스트 종료 -----")
