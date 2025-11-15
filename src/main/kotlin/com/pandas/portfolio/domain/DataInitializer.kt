@@ -105,7 +105,7 @@ class DataInitializer(
         val django = Skill(name = "Django", type = SkillType.FRAMEWORK.name, isActive = true)
         val mysql = Skill(name = "MySQL", type = SkillType.DATABASE.name, isActive = true)
         val redis = Skill(name = "Redis", type = SkillType.DATABASE.name, isActive = true)
-        val kafka = Skill(name = "Kafka", type = SkillType.DATABASE.name, isActive = true)
+        val kafka = Skill(name = "Kafka", type = SkillType.TOOL.name, isActive = true)
         skillRepository.saveAll(mutableListOf(java, kotlin, python, spring, django, mysql, redis, kafka))
 
         // project 초기화
